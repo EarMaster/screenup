@@ -1,14 +1,4 @@
-html, body {
-	background-color: #3f3f3f;
-	color: #efefef;
-}
-
-body * {
-	box-sizing: border-box;
-}
-
 .mockup {
-	color: #3f3f3f;
 	display: block;
 	margin: 1em 0;
 	padding: 30px;
@@ -19,6 +9,10 @@ body * {
 	text-align: center;
 	overflow: hidden;
 	white-space: nowrap;
+
+	&, & * {
+		box-sizing: border-box;
+	}
 
 	> * {
 		max-height: 100%;
@@ -31,7 +25,7 @@ body * {
 		background-size: contain;
 		background-position: center;
 		background-repeat: no-repeat;
-		box-shadow: 20px 30px 30px rgba(0,0,0,0.25);
+		box-shadow: -30px 30px 45px rgba(0,0,0,0.35);
 		transform: translateX(0px) translateY(-13%) translateZ(0px) rotateX(50deg) rotateY(0deg) rotateZ(-30deg) scale(0.9);
 		transform-origin: center center;
 		transform-style: preserve-3d;
@@ -48,10 +42,10 @@ body * {
 			transition-duration: 0.33s;
 		}
 
-		&:first-child {
+		&:first-of-type {
 			margin-left: 0!important;
 		}
-		&:last-child {
+		&:last-of-type {
 			margin-right: 0!important;
 		}
 	}
