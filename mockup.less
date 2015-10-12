@@ -11,48 +11,41 @@ body * {
 	color: #3f3f3f;
 	display: block;
 	margin: 1em 0;
-	padding: 20px 30px;
+	padding: 30px;
 	height: 420px; // height MUST explicitly be set
 	background-image: url(concrete_seamless.png);
 	background-size: 200px;
 	perspective: 1000px;
 	text-align: center;
+	overflow: hidden;
+	white-space: nowrap;
 
 	> * {
 		max-height: 100%;
 	}
 
+	@overlap: 125px;
+
 	.shot {
 		display: inline-block;
-		background-color: green;
 		background-size: contain;
 		background-position: center;
 		background-repeat: no-repeat;
+		box-shadow: 20px 30px 30px rgba(0,0,0,0.25);
 		transform: translateX(0px) translateY(-13%) translateZ(0px) rotateX(50deg) rotateY(0deg) rotateZ(-30deg) scale(0.9);
 		transform-origin: center center;
 		transform-style: preserve-3d;
-		transition: all 0.33s linear;
-		margin-left: -75px;
-		margin-right: -75px;
-
-		&::before {
-			content: "asdsa";
-			background-color: red;
-			width: 100%;
-			height: 100%;
-		}
-		&::after {
-			content: "öä,öml";
-			background-color: blue;
-			width: 100%;
-			height: 100%;
-		}
+		transition: all 0.11s linear;
+		max-height: 100%;
+		margin-left: -@overlap;
+		margin-right: -@overlap;
 
 		&:hover, &:active {
+			box-shadow: none;
 			transform: none;
-			margin-left: 120px;
-			margin-right: 120px;
-			transition-duration: 0.75s;
+			margin-left: @overlap * 1.333;
+			margin-right: @overlap * 1.333;
+			transition-duration: 0.33s;
 		}
 
 		&:first-child {
