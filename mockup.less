@@ -4,10 +4,12 @@
 	padding: 30px;
 	height: 420px; // height MUST explicitly be set
 	background-image: url(concrete_seamless.png);
+	background-color: #dddddd;
 	background-size: 200px;
 	perspective: 1000px;
 	text-align: center;
 	overflow: hidden;
+	overflow-x: auto;
 	white-space: nowrap;
 
 	&, & * {
@@ -22,6 +24,7 @@
 
 	.shot {
 		display: inline-block;
+		background-color: #efefef;
 		background-size: contain;
 		background-position: center;
 		background-repeat: no-repeat;
